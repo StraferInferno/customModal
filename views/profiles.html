@@ -1,0 +1,32 @@
+<h1>Profiles</h1>
+<button class="btn btn-default" ng-attr-id="btnId" style="border-radius: 5px; padding: 6px 12px;" ng-class="{'btn btn-primary': !isActive}" ng-disabled="isDisabled" ng-click="activeButton(btnId); todo(btnId)" type="button">User Profile</button>
+<button class="btn btn-default" ng-attr-id="btnID" style="border-radius: 5px; padding: 6px 12px;" ng-disabled="isDisabled" ng-class="{'btn btn-primary': isActive}" ng-click="activeButton(btnID);todo(btnID)" type="button">Admin Profile</button>
+<br/>
+<br/>
+<!--BEGIN: Modals Layout.-->
+<div bn-modals ng-show="subview" class="m-modals" ng-switch="subview">
+    <!-- BEGIN: Alert Modal. -->
+    <div ng-switch-when="alert" ng-controller="AlertModalController" class="modalBox">
+        <p>
+            {{ message }}
+        </p>
+        <p>
+            <a ng-click="close()">Ok, I got it!</a>
+        </p>
+        <!-- This is to demonstrate that we can jump from one modal to another. -->
+        <p>
+            <a ng-click="jumpToConfirm()" class="jump">Jump over to the confirm modal</a>
+        </p>
+    </div>
+    <!-- END: Alert Modal. -->
+</div>
+<!--END: Modals Layout.-->
+
+
+<!-- <div class="row padded">
+    <div class="list-group col-xs-2">
+        <a class="list-group-item" ng-repeat="item in shoppingList" ng-class="{active : item.selected}" ui-sref="profiles.item1({itemName:item.name})" ng-click="selectItem(item)">{{item.name}}</a>
+    </div>
+    <div ui-view class="col-xs-5"></div>
+</div>
+ -->
